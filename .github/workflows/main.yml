@@ -2,12 +2,12 @@
 
 name: My action
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [main]
-    
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -22,29 +22,18 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout code
         uses: actions/checkout@v2
-        
+
       - name: Setup Go
         uses: actions/setup-go@v2
         with:
           go-version: 1.16
-          
+
       - name: Build code
         run: go build -v -o ./bin/github-to-heroku
-              
+
       - name: Deploy
         uses: akhileshns/heroku-deploy@v3.12.12
-        with: 
+        with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "mymy-http-test-server"
+          heroku_app_name: "hsjeong-http-test-server"
           heroku_email: "nicewook@hotmail.com"
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      

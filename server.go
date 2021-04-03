@@ -7,12 +7,6 @@ import (
 	"os"
 )
 
-type myHandler struct{}
-
-func (myHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "hello")
-}
-
 func Greeting(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "hello")
 }
@@ -24,6 +18,6 @@ func main() {
 	}
 
 	if err := http.ListenAndServe(":"+port, http.HandlerFunc(Greeting)); err != nil {
-		log.Fatal(err)
+		log.Fatal
 	}
 }
