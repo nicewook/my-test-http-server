@@ -18,6 +18,6 @@ func main() {
 	}
 
 	if err := http.ListenAndServe(":"+port, http.HandlerFunc(Greeting)); err != nil {
-		log.Fatal
+		log.Fatal(err)
 	}
 }
