@@ -1,1 +1,1 @@
-web: bin/github-to-heroku
+web: bin/my-test-http-server
